@@ -24,3 +24,57 @@ SentinelX es una plataforma de Orquestación, Automatización y Respuesta de Seg
 <img width="1280" height="663" alt="image" src="https://github.com/user-attachments/assets/9c4daa5e-6f0b-44e1-933d-7a894e28a45a" />
 
 <img width="1280" height="778" alt="image" src="https://github.com/user-attachments/assets/c17a4a2f-696f-4600-baf6-fcaddc6b022e" />
+
+---
+## ⚙️ Instalación y Despliegue (Quick Start)
+
+Este proyecto está 100% dockerizado para garantizar su portabilidad. Para desplegar SentinelX en tu entorno local, sigue estos pasos:
+
+### 1. Requisitos Previos
+
+- [Docker](https://www.docker.com/) y Docker Compose instalados.
+- Git instalado.
+- (Opcional) Una cuenta de Discord para recibir las alertas del SOAR.
+
+### 2. Clonar el Repositorio
+
+```bash
+git clone https://github.com/CescJavier7/SentinelX-SOAR.git
+cd SentinelX-SOAR
+```
+
+### 3. Configuración de Variables de Entorno (Secretos)
+
+Por motivos de seguridad, los secretos no están en el control de versiones. Debes crear tu propio archivo `.env` basado en la plantilla proporcionada:
+
+1. Ve a la carpeta del backend: `cd backend`
+2. Copia la plantilla: `cp .env.example .env`
+3. Edita el archivo `.env` con tus datos:
+   - `UBUNTU_IP`: La IP de la máquina/servidor que deseas proteger.
+   - `DISCORD_WEBHOOK_URL`: La URL de tu canal de Discord para el ChatOps (si lo dejas vacío, el sistema omitirá esta notificación sin fallar).
+
+### 4. Generar la Identidad Criptográfica (Zero-Trust)
+
+Para que el SOAR pueda mitigar ataques en el firewall remoto sin usar contraseñas, debes generar una llave SSH Ed25519 y colocarla en la carpeta `backend/secrets/`:
+
+```bash
+mkdir secrets
+ssh-keygen -t ed25519 -C "sentinelx_bot" -f secrets/id_ed25519 -N ""
+```
+
+> **Nota:** Asegúrate de inyectar la llave pública `id_ed25519.pub` en el archivo `authorized_keys` de tu servidor destino.
+
+### 5. Levantar la Infraestructura
+
+Vuelve a la raíz del proyecto y ejecuta el orquestador maestro:
+
+```bash
+cd ..
+docker compose up --build -d
+```
+
+### 6. Acceso al SOC
+
+Una vez que todos los contenedores estén en verde, abre tu navegador y entra al Centro de Operaciones:
+
+👉 [http://localhost:5173](http://localhost:5173)
