@@ -21,3 +21,6 @@ SentinelX es una plataforma de Orquestación, Automatización y Respuesta de Seg
 - **Asynchronous Workflows:** Workers en segundo plano (FastAPI BackgroundTasks) para evitar el agotamiento de recursos durante ataques DDoS.
 - **Full Dockerization:** Despliegue de infraestructura inmutable mediante `docker-compose`.
 
+<img width="1280" height="663" alt="image" src="https://github.com/user-attachments/assets/9c4daa5e-6f0b-44e1-933d-7a894e28a45a" />
+
+<img width="1280" height="778" alt="image" src="https://github.com/user-attachments/assets/c17a4a2f-696f-4600-baf6-fcaddc6b022e" />
