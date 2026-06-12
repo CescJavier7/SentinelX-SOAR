@@ -1,0 +1,11 @@
+title: "Admin Account Targeted"
+id: "rule-002"
+status: "production"
+description: "Detecta intentos de login hacia cuentas administrativas"
+tags: 
+  - "attack.privilege_escalation"
+  - "attack.t1078"
+level: "critical"
+detection:
+  condition: 
+    user.name: "admin"

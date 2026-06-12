@@ -1,0 +1,5 @@
+name: "Protocolo de Cuentas Críticas"
+trigger: "Admin Account Targeted"
+actions:
+  - type: "firewall_block"
+    integration: "ubuntu_ufw"

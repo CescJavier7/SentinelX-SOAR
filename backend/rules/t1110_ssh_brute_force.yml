@@ -1,0 +1,11 @@
+title: "SSH Brute Force Detection"
+id: "rule-001"
+status: "production"
+description: "Detecta múltiples fallos de autenticación SSH"
+tags: 
+  - "attack.credential_access"
+  - "attack.t1110"
+level: "critical"
+detection:
+  condition: 
+    event.outcome: "failure"

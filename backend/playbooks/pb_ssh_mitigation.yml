@@ -1,0 +1,5 @@
+name: "Protocolo de Contención SSH"
+trigger: "SSH Brute Force Detection"  # Esto DEBE coincidir con el título de tu Regla Sigma
+actions:
+  - type: "firewall_block"
+    integration: "ubuntu_ufw"

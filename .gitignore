@@ -1,0 +1,22 @@
+# Sistema Operativo
+.DS_Store
+
+# Entornos Virtuales y Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Node.js y Frontend
+frontend/node_modules/
+frontend/dist/
+package-lock.json
+
+# Docker y Bases de Datos (SIEM)
+es_data/
+*.rdb
+
+# 🚨 SECRETOS Y CREDENCIALES (¡CRÍTICO!) 🚨
+.env
+backend/.env
+backend/secrets/

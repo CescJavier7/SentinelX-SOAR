@@ -1,0 +1,5 @@
+name: "Protocolo Anti-Reconocimiento"
+trigger: "Network Reconnaissance (Ping/Scan)"
+actions:
+  - type: "firewall_block"
+    integration: "ubuntu_ufw"

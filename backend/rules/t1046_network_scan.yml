@@ -1,0 +1,9 @@
+title: "Network Reconnaissance (Ping/Scan)"
+id: "rule-003"
+level: "critical"
+tags: 
+  - "attack.discovery"
+  - "attack.t1046"
+detection:
+  condition: 
+    message: "NIDS"
